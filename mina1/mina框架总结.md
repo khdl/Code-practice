@@ -206,6 +206,6 @@ Mina 中的很多执行环节都使用了多线程机制，用于提高性能。
 	
 		例：
 		acceptor.getFilterChain().addLast("exceutor", new ExecutorFilter());
-		我们看到是用这个功能，简单的一行代码就可以了。那么ExecutorFilter 还有许多重载的构造方法，这些重载的有参构造方法，参数主要用于指定如下信息：
+
 
 
