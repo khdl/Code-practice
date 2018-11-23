@@ -27,7 +27,6 @@ Mina 核心类图:
 
 ![](img/2.png)
 
-
 ### IoService
 
 这个接口是服务端IoAcceptor、客户端IoConnector 的抽象，提供IO 服务和管理IoSession的功能，它有如下几个常用的方法：
@@ -63,7 +62,6 @@ SocketAddress localAddress)方法，用于与Server 端建立连接，第二个�
 
 关于TCP连接的关闭：
 无论在客户端还是服务端，IoSession 都用于表示底层的一个TCP 连接，那么你会发现无论是Server 端还是Client 端的IoSession 调用close()方法之后，TCP 连接虽然显示关闭， 但主线程仍然在运行，也就是JVM 并未退出，这是因为IoSession 的close()仅仅是关闭了TCP的连接通道，并没有关闭Server 端、Client 端的程序。你需要调用IoService 的dispose()方法停止Server 端、Client 端。
-
 
 ### IoSessionConfig
 
@@ -166,7 +164,6 @@ ProtocolCodecFactory 中有如下两个方法：
 
 
 因此，构建一个ProtocolCodecFactory 需要ProtocolEncoder、ProtocolDecoder 两个实例。
-
 
 ### 线程模型配置
 
