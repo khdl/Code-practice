@@ -31,7 +31,7 @@ public class LactchTest {
        lactchTest.setTaskAllInOnce(5,taskTemp);
     }
 
-    private void setTaskAllInOnce(int threadNums,  Runnable task) throws InterruptedException {
+    private void setTaskAllInOnce(int threadNums, final Runnable task) throws InterruptedException {
         final CountDownLatch startGate = new CountDownLatch(1);
         final CountDownLatch endGate = new CountDownLatch(threadNums);
         for (int i = 0; i <threadNums ; i++) {

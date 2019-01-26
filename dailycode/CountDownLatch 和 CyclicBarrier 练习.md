@@ -1,5 +1,7 @@
 ### CountDownLatch 和 CyclicBarrier 练习
 
+(代码在工程dailycode包 com.liu.concurrentrequestxia)
+
 Java 中模拟并发请求，自然是很方便的，只要多开几个线程，发起请求就好了。但是，这种请求，一般会存在启动的先后顺序了，算不得真正的同时并发！Java 中提供了闭锁 CountDownLatch, 刚好就用来做这种事
 
 开启n个线程，加一个闭锁，开启所有线程；
