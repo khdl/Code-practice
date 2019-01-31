@@ -15,7 +15,9 @@ Tomcat是非常流行的Web Server，它还是一个满足Servlet规范的容器
 
 ### 具体实现
 
-工程结构：![](https://i.imgur.com/J0DDtdU.png)
+工程结构：
+
+![](https://i.imgur.com/J0DDtdU.png)
 
 
 
@@ -180,7 +182,7 @@ ServletMapping和ServletMappingConfig:会在web.xml中通过<servlet></servlet>�
 
 
 
-MyTomcat: 主要有 start()，dispach()方法，omcat的处理流程：把URL对应处理的Servlet关系形成，解析HTTP协议，封装请求/响应对象，利用反射实例化具体的Servlet进行处理即可。
+MyTomcat: 主要有 start()，dispach()方法，tomcat的处理流程：把URL对应处理的Servlet关系形成，解析HTTP协议，封装请求/响应对象，利用反射实例化具体的Servlet进行处理即可。
 	
      //主函数
 	public class Mytomcat {
