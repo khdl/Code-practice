@@ -1,4 +1,4 @@
-package com.liu.service;
+package com.liu.services;
 
 import javax.jws.WebService;
 

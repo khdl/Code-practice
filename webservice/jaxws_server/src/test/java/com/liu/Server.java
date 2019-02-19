@@ -1,6 +1,6 @@
 package com.liu;
 
-import com.liu.service.impl.HelloServiceimpl;
+import com.liu.services.impl.HelloServiceimpl;
 import org.apache.cxf.jaxws.JaxWsServerFactoryBean;
 
 /**

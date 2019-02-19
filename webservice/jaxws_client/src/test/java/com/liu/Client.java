@@ -1,6 +1,6 @@
 package com.liu;
 
-import com.liu.service.HelloService;
+import com.liu.services.HelloService;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 
 /**

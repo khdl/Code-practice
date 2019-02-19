@@ -1,11 +1,11 @@
-package com.liu.service;
+package com.liu.services;
 
 import javax.jws.WebService;
 
 /**
  * @ClassName: HelloService
  * @Auther: yu
- * @Date: 2019/2/19 10:55
+ * @Date: 2019/2/19 12:11
  * @Description:对外发布服务的接口
  */
 @WebService

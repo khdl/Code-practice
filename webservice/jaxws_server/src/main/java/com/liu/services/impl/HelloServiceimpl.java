@@ -1,6 +1,6 @@
-package com.liu.service.impl;
+package com.liu.services.impl;
 
-import com.liu.service.HelloService;
+import com.liu.services.HelloService;
 
 /**
  * @ClassName: HelloServiceimpl
