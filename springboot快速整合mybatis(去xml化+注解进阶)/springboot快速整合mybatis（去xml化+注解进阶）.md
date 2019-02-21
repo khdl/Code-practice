@@ -115,12 +115,9 @@ MyBatis-3 主要提供了以下CRUD的高级注解：
 		    username: root
 		    password: 123
 		    driver-class-name: com.mysql.jdbc.Driver
-		
 		mybatis:
 		  configuration:
 		    map-underscore-to-camel-case: true
-		
-		
 		logging:
 		  level:
 		    com.yu.demo: debug
