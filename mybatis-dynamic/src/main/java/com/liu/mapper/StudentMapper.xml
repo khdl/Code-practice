@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.liu.mapper.StudentMapper" >
+    <resultMap id="BaseResultMap" type="com.liu.entity.Student" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="phone" property="phone" jdbcType="VARCHAR" />
+        <result column="eamil" property="eamil" jdbcType="VARCHAR" />
+    </resultMap>
+    <sql id="Base_Column_List" >
+        id, name, phone,eamil
+    </sql>
+    <select id="selectByStudentSelective" resultMap="BaseResultMap" parameterType="com.liu.entity.Student">
+        select
+        <include refid="Base_Column_List" />
+        from student
+        where 1=1
+        <if test="name != null and name !=''">
+            and name like concat('%', #{name}, '%')
+        </if>
+        <if test="sex != null">
+            and sex=#{sex}
+        </if>
+    </select>
+    <update id="updateByPrimaryKeySelective" parameterType="com.liu.entity.Student">
+    update student
+    <set>
+        <if test="name != null">
+            `name` = #{name,jdbcType=VARCHAR},
+        </if>
+        <if test="phone != null">
+            phone = #{phone,jdbcType=VARCHAR},
+        </if>
+        <if test="email != null">
+            email = #{email,jdbcType=VARCHAR},
+        </if>
+
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+    </update>
+    <insert id="insertSelective" parameterType="com.liu.entity.Student">
+        insert into student
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="name != null">
+                `name`,
+            </if>
+            <if test="phone != null">
+                phone,
+            </if>
+            <if test="email != null">
+                email,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="phone != null">
+                #{phone,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                #{email,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <select id="selectByIdOrName" resultMap="BaseResultMap" parameterType="com.liu.entity.Student">
+        select
+        <include refid="Base_Column_List" />
+        from student
+        where 1=1
+        <choose>
+            <when test="id != null">
+                and id=#{id}
+            </when>
+            <when test="name != null and name != ''">
+                and name=#{name}
+            </when>
+            <otherwise>
+                and 1=2
+            </otherwise>
+        </choose>
+    </select>
+
+    <select id="selectByStudentIdList" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from student
+        where student_id in
+        <foreach collection="list" item="id" open="(" close=")" separator="," index="i">
+            #{id}
+        </foreach>
+    </select>
+
+</mapper>
