@@ -1,0 +1,37 @@
+<html>
+<head>
+    <link href="../ext/ext-theme-classic-all.css" rel="stylesheet" />
+    <script src="../ext/ext-all.js" ></script>
+    <script src="../ext/bootstrap.js"></script>
+    <script type="text/javascript">
+        Ext.onReady(function(){
+            Ext.create('Ext.tab.Panel',{
+                renderTo: Ext.getBody(),
+                height: 100,
+                width: 200,
+                items:[{
+                    xtype:'panel',
+                    title:'Tab One',
+                    html:'The first Tab',
+                    listeners:{
+                        render:function(){
+                            Ext.MessageBox.alert('Renderd One','Tab One was renderd.')
+                        }
+                    }
+                },{
+                    title:'Tab Two',
+                    html:'The Two Tab',
+                    listeners:{
+                        render:function(){
+                            Ext.MessageBox.alert('Renderd Two','Tab Two was renderd.')
+                        }
+                    }
+                }]
+            });
+        });
+    </script>
+</head>
+<body>
+<div id = "panel" > </div>
+</body>
+</html>

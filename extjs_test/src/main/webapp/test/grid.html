@@ -1,0 +1,40 @@
+<html>
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-classic/resources/theme-classic-all.css" rel="stylesheet" />
+    <script src="https://cdn.bootcss.com/extjs/6.0.0/ext-all.js"></script>
+    <script type="text/javascript">
+        Ext.onReady(function(){
+            Ext.create('Ext.grid.Panel',{
+               // id : 'panel',
+                renderTo :Ext.getBody(),
+                title: 'The Data',
+                xtype: 'grid',
+                store: {
+                    fields:['name', 'email', 'phone'],
+                    data:[
+                        { name: 'Lisa',  email: "lisa@simpsons.com",
+                            phone: "555-111-1224"  },
+                        { name: 'Bart',  email: "bart@simpsons.com",
+                            phone: "555-222-1234" },
+                        { name: 'Homer', email: "home@simpsons.com",
+                            phone: "555-222-1244"  },
+                        { name: 'Marge', email: "marge@simpsons.com",
+                            phone: "555-222-1254"  }
+                    ],
+                    proxy: {
+                        type: 'memory'
+                    }
+                },
+                columns: [
+                    { text: 'Name',  dataIndex: 'name' },
+                    { text: 'Email', dataIndex: 'email', flex: 1},
+                    { text: 'Phone', dataIndex: 'phone' }
+                ]
+            });
+        });
+    </script>
+</head>
+<body>
+<div id = "panel" > </div>
+</body>
+</html>

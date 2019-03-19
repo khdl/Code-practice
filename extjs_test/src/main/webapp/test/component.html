@@ -1,0 +1,26 @@
+<html>
+<head>
+    <link href="../ext/ext-theme-classic-all.css" rel="stylesheet" />
+    <script src="../ext/ext-all.js" ></script>
+    <script src="../ext/bootstrap.js"></script>
+    <script src="../ext/ext-locale-zh_CN.js"></script>
+    <script type="text/javascript">
+        Ext.onReady(function(){
+            var panel1 = Ext.create('Ext.panel.Panel',{
+               title:'Child Panel 1',
+               html:'A Panel'
+            });
+            var panel2 = Ext.create('Ext.panel.Panel',{
+                title:'Child Panel 2',
+                html:'another panel'
+            });
+            Ext.create('Ext.container.Viewport',{
+               items:[panel1,panel2]
+            });
+        });
+    </script>
+</head>
+<body>
+<div id = "panel" > </div>
+</body>
+</html>

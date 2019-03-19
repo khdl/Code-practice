@@ -1,0 +1,57 @@
+<html>
+<head>
+    <link href="../ext/ext-theme-classic-all.css" rel="stylesheet" />
+    <script src="../ext/ext-all.js" ></script>
+    <script src="../ext/bootstrap.js"></script>
+    <script type="text/javascript">
+        Ext.onReady(function(){
+            Ext.create('Ext.Button', {
+                text: 'Click Me',
+                renderTo: Ext.getBody(),
+                width:100,
+                height:100,
+                listeners: {
+                    click: function() {
+                        Ext.Msg.alert('Success!', 'I was clicked!');
+                    },
+                    mouseover: function() {
+                        this.hide();
+                    },
+                    hide: function() {
+                        // Waits 1 second (1000ms), then shows the button again
+                        Ext.defer(function() {
+                            this.show();
+                        }, 1000, this);
+                    }
+                }
+            });
+
+/*            var button = Ext.create('Ext.Button', {
+                renderTo: Ext.getBody(),
+                text: 'My Button'
+            });
+
+            button.on('click', function() {
+                Ext.Msg.alert('Success!','Event listener attached by .on');
+            });*/
+
+           // 每两秒执行一次
+            var button = Ext.create('Ext.Button', {
+                renderTo: Ext.getBody(),
+                text: 'Click Me',
+                listeners: {
+                    click: {
+                        buffer: 2000,
+                        fn: function() {
+                            Ext.Msg.alert('Success!','I say this only once every 2 seconds');
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div id = "panel" > </div>
+</body>
+</html>
