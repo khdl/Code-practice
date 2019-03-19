@@ -1,0 +1,56 @@
+<html>
+<head>
+    <link href="../ext/ext-theme-classic-all.css" rel="stylesheet" />
+    <script src="../ext/ext-all.js" ></script>
+    <script src="../ext/bootstrap.js"></script>
+    <script src="../ext/sencha-charts-debug.js"></script>
+    <script type="text/javascript">
+        Ext.onReady(function(){
+/*            Ext.create('Ext.draw.Container', {
+                sprites: [{
+                    type: 'circle',
+                    fillStyle: 'red',
+                    r: 100,
+                    cx: 100,
+                    cy: 100
+                }],
+                height:205,
+                width:205,
+                renderTo:Ext.getBody()
+            });*/
+            var main = Ext.create('Ext.draw.Container', {
+                sprites: [{
+                    type: 'rect',
+                    width: 100,
+                    height: 100,
+                    fillStyle: 'red'
+                }],
+                height:205,
+                width:205,
+                renderTo:Ext.getBody(),
+                listeners: {
+                    afterrender: function(me){
+                        var surface = me.getSurface(),
+                            sprite = surface.getItems()[0];
+
+                        sprite.setAttributes({
+                            fillStyle:'black'
+                        });
+
+                        Ext.create('Ext.fx.Anim', {
+                            target: surface,
+                            duration: 8000,
+                            to: {
+                                opacity: .5
+                            }
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div id = "panel" > </div>
+</body>
+</html>
