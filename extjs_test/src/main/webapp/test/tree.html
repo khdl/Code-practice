@@ -1,0 +1,38 @@
+<html>
+<head>
+    <link href="../ext/ext-theme-classic-all.css" rel="stylesheet" />
+    <script src="../ext/ext-all.js" ></script>
+    <script src="../ext/sencha-charts-debug.js"></script>
+    <script type="text/javascript">
+        Ext.onReady(function(){
+            Ext.create('Ext.tree.Panel', {
+                renderTo: document.body,
+                title: 'Simple Tree',
+                width: 300,
+                height: 250,
+                root: {
+                    text: 'Root',
+                    expanded: true,
+                    children: [{
+                        text: 'Child 1',
+                        leaf: true
+                    }, {
+                        text: 'Child 2',
+                        leaf: true
+                    }, {
+                        text: 'Child 3',
+                        expanded: true,
+                        children: [{
+                            text: 'Grandchild',
+                            leaf: true
+                        }]
+                    }]
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div id = "panel" > </div>
+</body>
+</html>

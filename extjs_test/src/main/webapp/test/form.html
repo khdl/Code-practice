@@ -1,0 +1,42 @@
+<html>
+<head>
+    <link href="../ext/ext-theme-classic-all.css" rel="stylesheet" />
+    <script src="../ext/ext-all.js" ></script>
+    <script src="../ext/bootstrap.js"></script>
+    <script src="../ext/sencha-charts-debug.js"></script>
+    <script type="text/javascript">
+        Ext.onReady(function(){
+            Ext.create('Ext.form.Panel', {
+                renderTo: document.body,
+                title: 'User Form',
+                height: 300,
+                width: 585,
+                defaults: {
+                    xtype: 'textfield',
+                    labelAlign: 'top',
+                    padding: 10
+                },
+                layout: 'hbox',
+                items: [
+                    {
+                        fieldLabel: 'First Name',
+                        name: 'firstName'
+                    },
+                    {
+                        fieldLabel: 'Last Name',
+                        name: 'lastName'
+                    },
+                    {
+                        xtype: 'datefield',
+                        fieldLabel: 'Date of Birth',
+                        name: 'birthDate'
+                    }
+                ]
+            });
+        });
+    </script>
+</head>
+<body>
+<div id = "panel" > </div>
+</body>
+</html>
