@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+<!--<form name="serForm" action="/excel/fileUpload1" method="post"  enctype="multipart/form-data">
+    <h1>上传文件</h1>
+    <input type="file" name="file">
+    <input type="submit" value="upload"/>
+</form>-->
+<input type="file" id="load_xls" name="file"  onchange ="uploadFile()">
+
+</body>
+<script>
+    function uploadFile() {
+        var myform = new FormData();
+        myform.append('file',$('#load_xls')[0].files[0]);
+        $.ajax({
+            url:"http://192.168.2.221:8080/excel/excel/upload" +
+                "",
+            type: "POST",
+            data: myform,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                if(data.code == 1) {
+                }else{
+                }
+            },
+            error:function(data){
+                }
+        });
+    };
+</script>
+</html>
