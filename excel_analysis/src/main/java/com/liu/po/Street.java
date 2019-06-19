@@ -14,6 +14,7 @@ public class Street {
     private String preCode;
     private String streetCode;
     private Date sysCreateTime;
+    private String streetAddr;
 
     public String getId() {
         return id;
@@ -53,5 +54,13 @@ public class Street {
 
     public void setSysCreateTime(Date sysCreateTime) {
         this.sysCreateTime = sysCreateTime;
+    }
+
+    public String getStreetAddr() {
+        return streetAddr;
+    }
+
+    public void setStreetAddr(String streetAddr) {
+        this.streetAddr = streetAddr;
     }
 }
