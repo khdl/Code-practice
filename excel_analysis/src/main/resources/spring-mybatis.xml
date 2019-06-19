@@ -14,9 +14,9 @@
         <!-- 基本属性 url、user、password -->
         <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
         <property name="url"
-                  value="jdbc:oracle:thin:@//192.168.2.223:1521/orahn"/>
-        <property name="username" value="eistrong"/>
-        <property name="password" value="eistrong"/>
+                  value="jdbc:oracle:thin:@//orahn"/>
+        <property name="username" value=""/>
+        <property name="password" value=""/>
 
         <!-- 配置初始化大小、最小、最大 -->
         <property name="initialSize" value="1"/>
