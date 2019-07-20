@@ -11,6 +11,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class Test {
     public static void main(String[] args){
-        ApplicationContext ac = new ClassPathXmlApplicationContext("spring_quartz.xml");
+        ApplicationContext ac = new ClassPathXmlApplicationContext("spring-quartz.xml");
     }
 }
