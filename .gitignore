@@ -35,3 +35,5 @@ practise/mvnw.cmd
 /.nb-gradle/
 
 
+/springboot操作mongodb/mongo/mvnw
+/springboot操作mongodb/mongo/mvnw.cmd
