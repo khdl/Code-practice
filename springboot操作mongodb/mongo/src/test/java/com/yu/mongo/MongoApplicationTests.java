@@ -17,9 +17,9 @@ public class MongoApplicationTests {
     private Example exm;
     @Test
     public void contextLoads() {
-       // exm.initArticle();
-        //exm.delete();
-       // exm.update();
+        exm.initArticle();
+        exm.delete();
+        exm.update();
         Page<Article> articles= exm.selectForPages();
     }
 
