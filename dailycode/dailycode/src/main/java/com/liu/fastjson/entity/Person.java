@@ -27,6 +27,11 @@ public class Person {
         this.name = name;
         this.dateofBirth = dateofBirth;
     }
+
+    public Person() {
+
+    }
+
     public int getAge() {
         return age;
     }
